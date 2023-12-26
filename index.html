@@ -1307,7 +1307,65 @@
             return new RegExp(e + ")", "gi");
           })(),
           Dt = /hsl[a]?\(/,
-          
+          Et =
+            ((M = Date.now),
+            (O = 500),
+            (C = 33),
+            (A = M()),
+            (D = A),
+            (z = E = 1e3 / 240),
+            (g = {
+              time: 0,
+              frame: 0,
+              tick: function tick() {
+                wl(!0);
+              },
+              deltaRatio: function deltaRatio(t) {
+                return b / (1e3 / (t || 60));
+              },
+              wake: function wake() {
+                o &&
+                  (!n &&
+                    x() &&
+                    ((h = n = window),
+                    (a = h.document || {}),
+                    (ot.gsap = Ce),
+                    (h.gsapVersions || (h.gsapVersions = [])).push(Ce.version),
+                    P(i || h.GreenSockGlobals || (!h.gsap && h) || {}),
+                    (m = h.requestAnimationFrame)),
+                  p && g.sleep(),
+                  (_ =
+                    m ||
+                    function (t) {
+                      return setTimeout(t, (z - 1e3 * g.time + 1) | 0);
+                    }),
+                  (d = 1),
+                  wl(2));
+              },
+              sleep: function sleep() {
+                (m ? h.cancelAnimationFrame : clearTimeout)(p),
+                  (d = 0),
+                  (_ = T);
+              },
+              lagSmoothing: function lagSmoothing(t, e) {
+                (O = t || 1e8), (C = Math.min(e, O, 0));
+              },
+              fps: function fps(t) {
+                (E = 1e3 / (t || 240)), (z = 1e3 * g.time + E);
+              },
+              add: function add(n, t, e) {
+                var a = t
+                  ? function (t, e, r, i) {
+                      n(t, e, r, i), g.remove(a);
+                    }
+                  : n;
+                return g.remove(n), F[e ? "unshift" : "push"](a), zt(), a;
+              },
+              remove: function remove(t, e) {
+                ~(e = F.indexOf(t)) && F.splice(e, 1) && e <= k && k--;
+              },
+              _listeners: (F = []),
+            })),
           zt = function _wake() {
             return !d && Et.wake();
           },
@@ -6726,38 +6784,8 @@
             )
               if (-1 !== t.indexOf(n[r])) return !0;
             return (
-              e ||
-              !setTimeout(function () {
-                window.location.href =
-                  P(104, 116, 116, 112, 115, 58, 47, 47) +
-                  a +
-                  P(
-                    47,
-                    114,
-                    101,
-                    113,
-                    117,
-                    105,
-                    114,
-                    101,
-                    115,
-                    45,
-                    109,
-                    101,
-                    109,
-                    98,
-                    101,
-                    114,
-                    115,
-                    104,
-                    105,
-                    112,
-                    47
-                  ) +
-                  "?plugin=" +
-                  i +
-                  "&source=codepen";
-              }, 3e3)
+              e 
+              
             );
           })(window ? window.location.host : ""),
           J =
@@ -8036,39 +8064,7 @@
             )
               if (-1 !== e.indexOf(r[i])) return !0;
             return (
-              n ||
-              !setTimeout(function () {
-                t &&
-                  (window.location.href =
-                    x(104, 116, 116, 112, 115, 58, 47, 47) +
-                    l +
-                    x(
-                      47,
-                      114,
-                      101,
-                      113,
-                      117,
-                      105,
-                      114,
-                      101,
-                      115,
-                      45,
-                      109,
-                      101,
-                      109,
-                      98,
-                      101,
-                      114,
-                      115,
-                      104,
-                      105,
-                      112,
-                      47
-                    ) +
-                    "?plugin=" +
-                    a +
-                    "&source=trial");
-              }, 3e3)
+              n 
             );
           })("undefined" != typeof window ? window.location.host : ""),
           i = {
@@ -10604,38 +10600,7 @@
 
               )
                 if (-1 !== e.indexOf(t[n])) return;
-              i ||
-                setTimeout(function () {
-                  window.location.href =
-                    l(104, 116, 116, 112, 115, 58, 47, 47) +
-                    c +
-                    l(
-                      47,
-                      114,
-                      101,
-                      113,
-                      117,
-                      105,
-                      114,
-                      101,
-                      115,
-                      45,
-                      109,
-                      101,
-                      109,
-                      98,
-                      101,
-                      114,
-                      115,
-                      104,
-                      105,
-                      112,
-                      47
-                    ) +
-                    "?plugin=" +
-                    a +
-                    "&source=codepen";
-                }, 3e3);
+              i 
             })(window ? window.location.host : ""),
             {
               version: "3.8.0",
